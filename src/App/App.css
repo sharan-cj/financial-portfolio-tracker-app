@@ -1,0 +1,71 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: white;
+  background: #0a7eda;
+  margin: 0;
+  padding: 0.3em;
+}
+
+.title h2 {
+  margin: 0.3em;
+  font-weight: 400;
+}
+
+.MyStocks {
+  text-align: left;
+  margin: 0em 5em 2em 5em;
+  display: flex;
+  flex-direction: column;
+}
+
+.MyStocks h2 {
+  font-weight: 400;
+}
+
+table,
+th,
+td {
+  border: 1px solid #cac1c1;
+  border-collapse: collapse;
+}
+
+th {
+  background: #0a7eda;
+  color: white;
+  font-weight: 400;
+}
+
+th,
+td {
+  padding: 0.5em 1em 0.5em 0.5em;
+  margin-left: 1em;
+}
+
+td {
+  font-weight: 500;
+}
+
+.MyStocksTable tr:nth-child(odd) {
+  background: #eae5e4;
+}
+
+.StopTracking {
+  color: white;
+  background: red;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  padding: 0.5em;
+  box-shadow: 1px 1px black;
+  cursor: pointer;
+  font-family: 'Comfortaa','Roboto',sans-serif;
+}
+
+hr {
+  width: 95%;
+  border-bottom: 0.5px solid #cccccc;
+}

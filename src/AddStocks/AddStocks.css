@@ -1,0 +1,38 @@
+.add-stocks-title h2 {
+    text-align: left;
+    margin: .5em 3em;
+    font-weight: 500;
+}
+
+.AddStocksTitle li {
+    list-style-type: none;
+    display: flex;
+    width: 50%;
+    align-items: center;
+    margin-top: 30px;
+    
+}
+
+.AddStocksTitle ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-left: 15%;
+}
+
+.AddStocksTitle li span {
+    margin-left: 20px;
+}
+
+.StockButton {
+    width: 100px;
+    height: 30px;
+    background: #fff;
+    cursor: pointer;
+    border: 1px solid #ababab;
+    border-radius: 4px;
+    font-family: Comfortaa, roboto, sans-serif;
+    box-shadow: 1px 2px 9px 0px darkgrey;
+    font-weight: 600;
+}
