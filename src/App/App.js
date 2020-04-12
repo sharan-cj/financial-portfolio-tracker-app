@@ -25,9 +25,7 @@ class App extends Component {
             </tr>
 
             <MyStocks />
-            <MyStocks />
-            <MyStocks />
-            <MyStocks />
+           
           </table>
         </div>
         <hr></hr>
