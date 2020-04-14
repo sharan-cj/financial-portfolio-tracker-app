@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import './MyStocks.css';
 import Axios from 'axios';
+import Alphavantage from '../Alphavantage/Alphavantage';
+
 
 class MyStocks extends Component {
   constructor(){
     super();
     this.state =
     {
-      myStocks: []
+      myStocks: [],
+      
     };
   };
 
@@ -21,6 +24,9 @@ class MyStocks extends Component {
       console.log("myStocks", myStocks);
       this.setState({ myStocks });
     });
+
+
+   
   };
 
   componentDidUpdate() {
@@ -38,11 +44,11 @@ class MyStocks extends Component {
     if (myStocksArr.length > 1) {
     Axios.delete(
     `https://financial-pf-tracker.firebaseio.com/myStocks/${stock}.json?auth=7S5VnVzMGMBN8wudel6jnQp2SOblrVG89nzJucyt`
-    ).then(response => console.log(response));
+    ).then(response => console.log('deleting...',response));
   }
 }
 
-  
+
 
   render() {
     
@@ -51,15 +57,15 @@ class MyStocks extends Component {
       <>
       {Object.keys(this.state.myStocks).map(stock =>{
         return(
-        <tr>
+        <tr key={stock}>
         <td>{this.state.myStocks[stock].stockSymbol}</td>
         <td>{this.state.myStocks[stock].stockName}</td>
         <td>{this.state.myStocks[stock].numberOfShares}</td>
         <td>{this.state.myStocks[stock].buyPrice}</td>
-        <td>{null}</td>
-        <td>{null}</td>
+        <Alphavantage buyDate={this.state.myStocks[stock].buyDate} stockSymbol={this.state.myStocks[stock].stockSymbol} numberOfShares={this.state.myStocks[stock].numberOfShares} buyPrice={this.state.myStocks[stock].buyPrice}/>
+        
         <td>
-          <button className="StopTracking" 
+          <button className="StopTrackingBtn" 
           onClick={this.stopTrackningHandler}
           id={stock}
           >Stop Tracking</button>

@@ -14,6 +14,7 @@ class App extends Component {
         <div className="MyStocks">
           <h2>My Stocks</h2>
           <table className="MyStocksTable">
+            <thead>
             <tr>
               <th>Stock symbol</th>
               <th>Stock name</th>
@@ -23,9 +24,10 @@ class App extends Component {
               <th>Profit/Loss</th>
               <th></th>
             </tr>
-
+            </thead>
+            <tbody>
             <MyStocks />
-           
+            </tbody>
           </table>
         </div>
         <hr></hr>

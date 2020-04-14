@@ -50,11 +50,11 @@ td {
   font-weight: 500;
 }
 
-.MyStocksTable tr:nth-child(odd) {
+.MyStocksTable tr:nth-child(even) {
   background: #eae5e4;
 }
 
-.StopTracking {
+.StopTrackingBtn {
   color: white;
   background: red;
   border: 1px solid #000000;

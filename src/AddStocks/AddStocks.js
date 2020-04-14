@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import "./AddStocks.css";
 import Modal from "../Modal/Modal";
-
-import fire from "../Firebase/firebase";
 import Axios from "axios";
 
 class AddStocks extends Component {
@@ -28,7 +26,7 @@ class AddStocks extends Component {
       "https://financial-pf-tracker.firebaseio.com/myStocks.json?auth=7S5VnVzMGMBN8wudel6jnQp2SOblrVG89nzJucyt"
     ).then(response => {
       let myStocks = response.data;
-      console.log("myStocks", myStocks);
+    //   console.log("myStocks", myStocks);
       this.setState({ myStocks });
     });
   }
@@ -64,20 +62,23 @@ class AddStocks extends Component {
     let myStocksArr = Object.keys(this.state.myStocks);
     var warning;
     if(myStocksArr.length < 5){
-        myStocksArr.map(stock => {
+        myStocksArr.forEach(stock => {
+            
             let selectedStockName = this.state.myStocks[stock].stockName;
-            if (this.state.stockName == selectedStockName) {
+            if (this.state.stockName === selectedStockName) {
               this.setState({ warningText: "The selected stock is already added !" });
               warning = true;
               this.stockFormReset();
-            } else if (selectedStockName != this.state.stockName) {
+            } else if (selectedStockName !== this.state.stockName) {
               warning = false;
               this.setState({ warningText: "" });
             } else {
               this.stockFormCancelBtn();
             }
+        
+        
           });
-          if (warning == false) {
+          if (warning === false) {
             this.setState({ warningText: "" });
             this.postData();
             this.stockFormCancelBtn();
@@ -119,7 +120,7 @@ class AddStocks extends Component {
     let modalContent = (
       <>
         <button id="xcancel" onClick={this.stockFormCancelBtn}>
-          <img src={require("../images/redcross.png")} />
+          <img src={require("../images/redcross.png")} alt='&#10008;'/>
         </button>
         <div className="AddStockForm">
           <h2>
@@ -183,8 +184,7 @@ class AddStocks extends Component {
                     className="StockButton"
                     onClick={this.addStocksBtn}
                     name={ this.state.stocks[stock].name}
-                    id={this.state.stocks[stock].symbol}
-                    
+                    id={this.state.stocks[stock].symbol} 
                   >
                     {this.state.stocks[stock].symbol}
                   </button>
