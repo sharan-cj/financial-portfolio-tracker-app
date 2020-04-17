@@ -120,7 +120,8 @@ class AddStocks extends Component {
     let modalContent = (
       <>
         <button id="xcancel" onClick={this.stockFormCancelBtn}>
-          <img src={require("../images/redcross.png")} alt='&#10008;'/>
+          <img src={require("../images/redcross.png")} alt='&#10008;'/> 
+          
         </button>
         <div className="AddStockForm">
           <h2>
