@@ -163,7 +163,7 @@ class AddStocks extends Component {
             <input type="date" name="buyDate" onChange={this.inputHandler} />
           </div>
 
-          <button className="AddStockFormBtn" onClick={this.addStockHandler}>
+          <button className="AddButton" onClick={this.addStockHandler}>
             Add
           </button>
         </div>
