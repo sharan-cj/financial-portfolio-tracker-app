@@ -136,6 +136,7 @@ class AddStocks extends Component {
               No. of Shares : <span>{this.state.numberOfShares}</span>
             </h4>
             <input
+              id="noShares"
               type="number"
               placeholder="No. of Shares"
               name="numberOfShares"
@@ -147,6 +148,7 @@ class AddStocks extends Component {
               Buy Price : <span>{this.state.buyPrice}</span>
             </h4>
             <input
+              id="buyPrice"
               type="number"
               placeholder="Buying price"
               name="buyPrice"
@@ -160,7 +162,7 @@ class AddStocks extends Component {
 
             <span id="warning">{this.state.warningText}</span>
 
-            <input type="date" name="buyDate" onChange={this.inputHandler} />
+            <input id="buyDate" type="date" name="buyDate" onChange={this.inputHandler} />
           </div>
 
           <button className="AddButton" onClick={this.addStockHandler}>
